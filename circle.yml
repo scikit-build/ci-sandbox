@@ -10,13 +10,25 @@ test:
     - echo "test"
 
 deployment:
-  nightly:
+  nightly-jcfr:
+    branch: master
+    owner: jcfr
+    commands:
+      - echo "deployment-nightly-jcfr"
+  release-jcfr:
+    tag: /v[0-9]+\.[0-9]+\.[0-9]+/
+    owner: jcfr
+    commands:
+      - echo "deployment-release-jcfr"
+
+  nightly-scikit-build:
     branch: master
     owner: scikit-build
     commands:
-      - echo "deployment-nightly"
-  release:
+      - echo "deployment-nightly-scikit-build"
+  release-scikit-build:
     tag: /v[0-9]+\.[0-9]+\.[0-9]+/
     owner: scikit-build
     commands:
-      - echo "deployment-release"
+      - echo "deployment-release-scikit-build"
+
